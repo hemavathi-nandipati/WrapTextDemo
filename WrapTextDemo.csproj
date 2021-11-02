@@ -1,0 +1,80 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="WrapTextTest\TestData\Input\MultipleLinesText.txt" />
+    <None Remove="WrapTextTest\TestData\Output\MultipleLinesText.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <COMReference Include="{bee4bfec-6683-3e67-9167-3c0cbc68f40a}">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>2</VersionMajor>
+      <Guid>bee4bfec-6683-3e67-9167-3c0cbc68f40a</Guid>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="WrapTextTest\TestData\Input\MultipleLinesText.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WrapTextTest\TestData\Output\MultipleLinesText.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
+    <PackageReference Include="ExtentReports" Version="4.1.0" />
+    <PackageReference Include="NUnit" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.16.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
+    <PackageReference Include="Selenium.DefaultWaitHelpers" Version="1.0.3" />
+    <PackageReference Include="Selenium.Support" Version="4.0.1" />
+    <PackageReference Include="Selenium.WebDriver" Version="4.0.1" />
+    <PackageReference Include="Selenium.WebDriver.ChromeDriver" Version="95.0.4638.1700" />
+    <PackageReference Include="Selenium.WebDriver.WaitExtensions" Version="2.0.0" />
+    <PackageReference Include="System.Configuration.Abstractions" Version="2.0.2.45" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
+    <PackageReference Include="WebDriverWaitExtensions" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="WrapTextTest\TestData\Input\PerfText.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="WrapTextTest\TestData\Input\BlankFile.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="WrapTextTest\TestData\Input\BoundaryText.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="WrapTextTest\TestData\Input\SingleLineText.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="WrapTextTest\TestData\Input\SpecialCharsText.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="WrapTextTest\TestData\Output\BlankFile.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="WrapTextTest\TestData\Output\BoundaryText.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="WrapTextTest\TestData\Output\PerfText.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="WrapTextTest\TestData\Output\SingleLineText.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="WrapTextTest\TestData\Output\SpecialCharsText.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
